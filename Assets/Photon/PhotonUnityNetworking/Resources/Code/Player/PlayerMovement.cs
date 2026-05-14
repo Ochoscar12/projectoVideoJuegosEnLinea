@@ -189,8 +189,9 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
         if (collision.gameObject.CompareTag("obs1"))
         {
             TakeHit();
-            Debug.Log("golpe");
+            Debug.Log("Golpeado por un obstáculo");
         }
+
     }
 
     void Update()

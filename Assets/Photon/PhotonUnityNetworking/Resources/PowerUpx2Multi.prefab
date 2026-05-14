@@ -12,13 +12,12 @@ GameObject:
   - component: {fileID: 6746171124729060942}
   - component: {fileID: 6064075498573023069}
   - component: {fileID: 6563009461470658583}
-  - component: {fileID: 6004529987939166125}
   - component: {fileID: 1645303596120874002}
-  - component: {fileID: -5486344509587796667}
   - component: {fileID: -8862344536441666855}
+  - component: {fileID: 7915930911192801464}
   m_Layer: 0
-  m_Name: Obs1
-  m_TagString: Undefined
+  m_Name: PowerUpx2Multi
+  m_TagString: PowerUP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 505ef748780ae481e91d8177a4e0d680, type: 2}
+  - {fileID: 2100000, guid: b491759f5fad141dfbf765beeaacbe71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,20 +115,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6004529987939166125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194544273623477163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b6141e0cb6245a6ab3e9fd899b8a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleBehavior
-  fallSpeed: 8
-  destroyYLimit: 0
 --- !u!114 &1645303596120874002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,20 +137,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &-5486344509587796667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194544273623477163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b2d0b52c33664bd1aa20336b61c5898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObstacleCollision
-  hasHitPlayer: 0
-  wasPunched: 0
 --- !u!54 &-8862344536441666855
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -193,3 +164,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7915930911192801464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194544273623477163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff277a142a7be49499cf0dfee3a86607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemBehavior
+  tipoDeItem: 3
+  fallSpeed: 2.5
+  destroyYLimit: -5

@@ -97,6 +97,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshSpawner.cs" />
     <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/Game/ShowAllNames.cs" />
     <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/LobbySync/LobbyPlayerSync.cs" />
+    <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/PoweUp/PlayerInventory.cs" />
     <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/Player/CameraFollow.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
@@ -113,10 +114,12 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
+    <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/PoweUp/ItemTypes.cs" />
     <Compile Include="Assets/Photon/PhotonChat/Demos/Demo Chat/Code/Utilities/TextButtonTransition.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
     <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/LobbySync/AvatarSelection.cs" />
     <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/Game/WindManager.cs" />
+    <Compile Include="Assets/Photon/PhotonUnityNetworking/Resources/Code/PoweUp/ItemBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
