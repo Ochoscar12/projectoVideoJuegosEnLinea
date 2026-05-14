@@ -211,10 +211,10 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
                 if (disableTimer <= 0f)
                 {
                     canClimb = true;
-                    hitCount = 0; // reset hits after penalty
+                    hitCount = 0; 
                 }
 
-                return; // 🚨 blocks ALL input
+                return; 
             }
 
             float verticalInput = 0f;
