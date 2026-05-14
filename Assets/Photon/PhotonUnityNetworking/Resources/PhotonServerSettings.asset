@@ -45,6 +45,8 @@ MonoBehaviour:
   - RecibirPunetazoRPC
   - AnimarGolpeRPC
   - RPC_EndGame
+  - RPC_JugadorLlego
+  - RPC_JugadorLlegoPantallaDividida
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

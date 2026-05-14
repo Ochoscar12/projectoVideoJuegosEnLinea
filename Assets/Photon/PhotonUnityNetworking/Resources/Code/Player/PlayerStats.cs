@@ -45,13 +45,31 @@ public class PlayerStats : MonoBehaviourPun
 
         if (photonView.IsMine)
         {
-            GameObject textoEnEscena = GameObject.Find("TextoPuntaje"); 
+            bool soyJ1 = PhotonNetwork.IsMasterClient;
             
-            if (textoEnEscena != null)
+            string nombreMiTexto = soyJ1 ? "TextoPuntajeJ1" : "TextoPuntajeJ2";
+            GameObject miTextoEnEscena = GameObject.Find(nombreMiTexto); 
+            
+            if (miTextoEnEscena != null)
             {
-                scoreText = textoEnEscena.GetComponent<TextMeshProUGUI>();
+                scoreText = miTextoEnEscena.GetComponent<TextMeshProUGUI>();
                 originalScoreColor = scoreText.color; 
                 UpdateScoreUI(); 
+            }
+
+            string nombreOtroTexto = soyJ1 ? "TextoPuntajeJ2" : "TextoPuntajeJ1";
+            GameObject otroTextoEnEscena = GameObject.Find(nombreOtroTexto);
+            
+            if (otroTextoEnEscena != null)
+            {
+                if (otroTextoEnEscena.transform.parent != null)
+                {
+                    otroTextoEnEscena.transform.parent.gameObject.SetActive(false);
+                }
+                else
+                {
+                    otroTextoEnEscena.SetActive(false);
+                }
             }
         }
     }

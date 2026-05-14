@@ -754,11 +754,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90159edbda7e944b5a34b878178b6818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  baseClimbSpeed: 5
   climbSpeed: 3
   swingForce: 60
+  initialBurstMultiplier: 3
   maxSwingSpeed: 10
-  ropeLength: 4
-  ropeRenderer: {fileID: 0}
+  velocidadCaida: 8
+  resistenciaAlViento: 0.4
+  maxHorizontalDistance: 3
+  maxSwingAngle: 20
+  wallBounceForce: 40
+  bounceCooldown: 1.5
+  linksCount: 15
+  linkLength: 1
+  ropeWidth: 0.15
+  ropeMaterial: {fileID: 0}
+  holdOffset: {x: 0, y: -1, z: -0.3}
+  distanciaEscaladaFisica: 3
+  totalClimbedDistance: 0
 --- !u!114 &-7287910219415050822
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+using System.Collections;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class AvatarSelection : MonoBehaviour
@@ -11,10 +12,11 @@ public class AvatarSelection : MonoBehaviour
     public GameObject[] avatar3DModels; 
 
     private int currentAvatarIndex = 0;
+    private Coroutine rutinaBaileActual; 
 
     void Start()
     {
-        Update3DModelVisibility(0);
+        Update3DModelVisibility(0, false);
     }
 
     public void OpenSelectionPanel()
@@ -37,21 +39,54 @@ public class AvatarSelection : MonoBehaviour
     {
         currentAvatarIndex = index;
         
-        Update3DModelVisibility(index);
+        Update3DModelVisibility(index, true);
 
         SyncAvatarWithPhoton();
         CloseSelectionPanel();
     }
 
-    private void Update3DModelVisibility(int activeIndex)
+    private void Update3DModelVisibility(int activeIndex, bool reproducirBaile)
     {
         for (int i = 0; i < avatar3DModels.Length; i++)
         {
             if (avatar3DModels[i] != null)
             {
-                avatar3DModels[i].SetActive(i == activeIndex);
+                bool esElSeleccionado = (i == activeIndex);
+                avatar3DModels[i].SetActive(esElSeleccionado);
+
+                if (esElSeleccionado && reproducirBaile)
+                {
+                    HacerBailar(avatar3DModels[i]);
+                }
             }
         }
+    }
+
+    public void ActivarBaile()
+    {
+        if (avatar3DModels[currentAvatarIndex] != null)
+        {
+            HacerBailar(avatar3DModels[currentAvatarIndex]);
+        }
+    }
+
+    private void HacerBailar(GameObject avatar)
+    {
+        Animator anim = avatar.GetComponent<Animator>();
+        if (anim == null) anim = avatar.GetComponentInChildren<Animator>();
+
+        if (anim != null)
+        {
+            if (rutinaBaileActual != null) StopCoroutine(rutinaBaileActual);
+            rutinaBaileActual = StartCoroutine(RutinaBaile(anim));
+        }
+    }
+
+    private IEnumerator RutinaBaile(Animator anim)
+    {
+        anim.SetBool("bailando", true);
+        yield return new WaitForSeconds(5f);
+        if (anim != null) anim.SetBool("bailando", false);
     }
 
     private void SyncAvatarWithPhoton()

@@ -14,9 +14,13 @@ public class WindManager : MonoBehaviourPunCallbacks
     public float duracionViento = 4f;
     public float fuerzaViento = 20f; 
 
-    [Header("UI del Viento (Canvas)")]
-    public GameObject panelViento; 
-    public TextMeshProUGUI textoDireccion;    
+    [Header("UI del Viento - Jugador 1 (Izquierda)")]
+    public GameObject panelVientoJ1; 
+    public TextMeshProUGUI textoDireccionJ1;    
+
+    [Header("UI del Viento - Jugador 2 (Derecha)")]
+    public GameObject panelVientoJ2; 
+    public TextMeshProUGUI textoDireccionJ2; 
 
     [HideInInspector] public float direccionVientoActual = 0f; 
 
@@ -27,8 +31,9 @@ public class WindManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        if (panelViento != null) panelViento.SetActive(false);
-        if (textoDireccion != null) textoDireccion.text = "";
+        // Apagar ambos paneles al iniciar
+        if (panelVientoJ1 != null) panelVientoJ1.SetActive(false);
+        if (panelVientoJ2 != null) panelVientoJ2.SetActive(false);
 
         if (PhotonNetwork.IsMasterClient)
         {
@@ -69,25 +74,29 @@ public class WindManager : MonoBehaviourPunCallbacks
             int dir = (int)propertiesThatChanged["WindDir"];
             direccionVientoActual = dir;
 
+            bool soyJ1 = PhotonNetwork.IsMasterClient;
+            GameObject miPanel = soyJ1 ? panelVientoJ1 : panelVientoJ2;
+            TextMeshProUGUI miTexto = soyJ1 ? textoDireccionJ1 : textoDireccionJ2;
+
             if (dir == 0)
             {
-                if (panelViento != null) panelViento.SetActive(false);
-                if (textoDireccion != null) textoDireccion.text = "";
+                if (miPanel != null) miPanel.SetActive(false);
+                if (miTexto != null) miTexto.text = "";
             }
             else
             {
-                if (panelViento != null) panelViento.SetActive(true);
-                if (textoDireccion != null)
+                if (miPanel != null) miPanel.SetActive(true);
+                if (miTexto != null)
                 {
                     if (dir == 1)
                     {
-                        textoDireccion.text = "VIENTO: >>>";
-                        textoDireccion.color = Color.red; 
+                        miTexto.text = "VIENTO: >>>";
+                        miTexto.color = Color.red; 
                     }
                     else
                     {
-                        textoDireccion.text = "<<< :VIENTO";
-                        textoDireccion.color = Color.blue;
+                        miTexto.text = "<<< :VIENTO";
+                        miTexto.color = Color.blue;
                     }
                 }
             }

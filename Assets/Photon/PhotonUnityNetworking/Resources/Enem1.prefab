@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8429457839512202571}
   m_Layer: 0
   m_Name: Enem1
-  m_TagString: Untagged
+  m_TagString: obs1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 4511778411729618344}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: obs1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 4241828313120144411}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: obs1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

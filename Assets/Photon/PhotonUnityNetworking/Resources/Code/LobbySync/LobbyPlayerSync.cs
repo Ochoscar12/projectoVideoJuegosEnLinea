@@ -44,7 +44,8 @@ public class LobbyPlayerSync : MonoBehaviourPunCallbacks
         {
             remoteAvatarIndex = (int)newPlayer.CustomProperties["AvatarIndex"];
         }
-        UpdateRemoteAvatarVisibility(remoteAvatarIndex);
+        
+        UpdateRemoteAvatarVisibility(remoteAvatarIndex, true);
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -58,18 +59,38 @@ public class LobbyPlayerSync : MonoBehaviourPunCallbacks
         if (!targetPlayer.IsLocal && changedProps.ContainsKey("AvatarIndex"))
         {
             int newAvatarIndex = (int)changedProps["AvatarIndex"];
-            UpdateRemoteAvatarVisibility(newAvatarIndex);
+            
+            UpdateRemoteAvatarVisibility(newAvatarIndex, true);
         }
     }
-
-    private void UpdateRemoteAvatarVisibility(int activeIndex)
+    
+    private void UpdateRemoteAvatarVisibility(int activeIndex, bool reproducirBaile = false)
     {
         for (int i = 0; i < remoteAvatar3DModels.Length; i++)
         {
             if (remoteAvatar3DModels[i] != null)
             {
-                remoteAvatar3DModels[i].SetActive(i == activeIndex);
+                bool esElSeleccionado = (i == activeIndex);
+                remoteAvatar3DModels[i].SetActive(esElSeleccionado);
+
+                if (esElSeleccionado && reproducirBaile && activeIndex != -1)
+                {
+                    Animator anim = remoteAvatar3DModels[i].GetComponent<Animator>();
+                    if (anim == null) anim = remoteAvatar3DModels[i].GetComponentInChildren<Animator>();
+
+                    if (anim != null)
+                    {
+                        StartCoroutine(RutinaBaileOponente(anim));
+                    }
+                }
             }
         }
+    }
+
+    private System.Collections.IEnumerator RutinaBaileOponente(Animator anim)
+    {
+        anim.SetBool("bailando", true);
+        yield return new WaitForSeconds(5f);
+        if (anim != null) anim.SetBool("bailando", false);
     }
 }
