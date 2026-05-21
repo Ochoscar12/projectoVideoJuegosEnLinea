@@ -71,6 +71,7 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\Demo Chat\Code\Utilities\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\LobbySync\LobbyManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\MusicScript.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\GameManager.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\Obstacles\PlayerLateralSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
@@ -80,8 +81,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Demo Chat\Code\Utilities\EnableOnStart.cs" />
+    <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\AmbientSound.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\Obstacles\ObstacleBehavior.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Demo Chat\Code\ChatSettings.cs" />
+    <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\UISoundScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\Obstacles\PlayerObstacleSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Resources\Code\Game\PlayerNameInput.cs" />
