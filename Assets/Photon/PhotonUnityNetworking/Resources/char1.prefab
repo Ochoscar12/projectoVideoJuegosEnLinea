@@ -1441,6 +1441,8 @@ GameObject:
   - component: {fileID: 6820152169861067956}
   - component: {fileID: 623574327560452774}
   - component: {fileID: 7431527429859677712}
+  - component: {fileID: 7723074405405996431}
+  - component: {fileID: 5649542285599302112}
   m_Layer: 0
   m_Name: char1
   m_TagString: Player
@@ -1657,6 +1659,45 @@ MonoBehaviour:
   distanciaGolpe: 0.7
   alturaOffset: 0.9
   radioGolpe: 0.3
+--- !u!114 &7723074405405996431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845937071919552369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb4a01080f8e479bb1103c1eb911a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  itemActual: 0
+  iconoProyectil: {fileID: 21300000, guid: f40cd49b37180475297bf1652d7c7e58, type: 3}
+  iconoEscudo: {fileID: 21300000, guid: 186c883671bee4c81812bc31f8edcdd3, type: 3}
+  iconoMultiplicador: {fileID: 21300000, guid: b61bc65a081cf4771bb49960eddf6d39, type: 3}
+--- !u!114 &5649542285599302112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845937071919552369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbc0f403e5c649cc9cf0ee84bc0f37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerObstacleSpawner
+  obstaclePrefabNames:
+  - projectile
+  - PowerUpShield
+  - PowerUpx2Multi
+  laneOffsets:
+  - -2
+  - 0
+  - 2
+  spawnHeightOffset: 15
+  minSpawnTime: 5
+  maxSpawnTime: 8
 --- !u!1 &7013146711587294082
 GameObject:
   m_ObjectHideFlags: 0

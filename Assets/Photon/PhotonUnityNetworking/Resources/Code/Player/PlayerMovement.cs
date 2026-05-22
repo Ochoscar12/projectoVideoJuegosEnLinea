@@ -189,8 +189,9 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
         if (collision.gameObject.CompareTag("obs1"))
         {
             TakeHit();
-            Debug.Log("golpe");
+            Debug.Log("Golpeado por un obstáculo");
         }
+
     }
 
     void Update()
@@ -228,9 +229,9 @@ public class PlayerMovement : MonoBehaviourPun, IPunObservable
                 {
                     canClimb = true;
                     hitCount = 0; 
-                    
-                    if (anim != null) anim.SetBool("cayendo", false); 
                 }
+
+                return; 
             }
             else
             {
